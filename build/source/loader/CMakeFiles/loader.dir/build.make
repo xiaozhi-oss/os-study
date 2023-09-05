@@ -101,20 +101,37 @@ source/loader/CMakeFiles/loader.dir/loader_16.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/loader.dir/loader_16.c.s"
 	cd D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader && C:/x86_64-elf-tools-windows/bin/x86_64-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Work/CWork/os-study/diy-x86os-master/start/start/source/loader/loader_16.c -o CMakeFiles/loader.dir/loader_16.c.s
 
+source/loader/CMakeFiles/loader.dir/loader_32.c.obj: source/loader/CMakeFiles/loader.dir/flags.make
+source/loader/CMakeFiles/loader.dir/loader_32.c.obj: source/loader/CMakeFiles/loader.dir/includes_C.rsp
+source/loader/CMakeFiles/loader.dir/loader_32.c.obj: ../source/loader/loader_32.c
+source/loader/CMakeFiles/loader.dir/loader_32.c.obj: source/loader/CMakeFiles/loader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:/Work/CWork/os-study/diy-x86os-master/start/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object source/loader/CMakeFiles/loader.dir/loader_32.c.obj"
+	cd D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader && C:/x86_64-elf-tools-windows/bin/x86_64-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT source/loader/CMakeFiles/loader.dir/loader_32.c.obj -MF CMakeFiles/loader.dir/loader_32.c.obj.d -o CMakeFiles/loader.dir/loader_32.c.obj -c D:/Work/CWork/os-study/diy-x86os-master/start/start/source/loader/loader_32.c
+
+source/loader/CMakeFiles/loader.dir/loader_32.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/loader.dir/loader_32.c.i"
+	cd D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader && C:/x86_64-elf-tools-windows/bin/x86_64-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:/Work/CWork/os-study/diy-x86os-master/start/start/source/loader/loader_32.c > CMakeFiles/loader.dir/loader_32.c.i
+
+source/loader/CMakeFiles/loader.dir/loader_32.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/loader.dir/loader_32.c.s"
+	cd D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader && C:/x86_64-elf-tools-windows/bin/x86_64-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:/Work/CWork/os-study/diy-x86os-master/start/start/source/loader/loader_32.c -o CMakeFiles/loader.dir/loader_32.c.s
+
 # Object files for target loader
 loader_OBJECTS = \
 "CMakeFiles/loader.dir/start.S.obj" \
-"CMakeFiles/loader.dir/loader_16.c.obj"
+"CMakeFiles/loader.dir/loader_16.c.obj" \
+"CMakeFiles/loader.dir/loader_32.c.obj"
 
 # External object files for target loader
 loader_EXTERNAL_OBJECTS =
 
 source/loader/loader.exe: source/loader/CMakeFiles/loader.dir/start.S.obj
 source/loader/loader.exe: source/loader/CMakeFiles/loader.dir/loader_16.c.obj
+source/loader/loader.exe: source/loader/CMakeFiles/loader.dir/loader_32.c.obj
 source/loader/loader.exe: source/loader/CMakeFiles/loader.dir/build.make
 source/loader/loader.exe: source/loader/CMakeFiles/loader.dir/linklibs.rsp
 source/loader/loader.exe: source/loader/CMakeFiles/loader.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Work/CWork/os-study/diy-x86os-master/start/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable loader.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:/Work/CWork/os-study/diy-x86os-master/start/start/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable loader.exe"
 	cd D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader && x86_64-elf-ld @CMakeFiles/loader.dir/objects1.rsp -m elf_i386  -Ttext=0x8000 -o D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader/loader.elf
 	cd D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader && x86_64-elf-objcopy -O binary loader.elf D:/Work/CWork/os-study/diy-x86os-master/start/start/../../image/loader.bin
 	cd D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader && x86_64-elf-objdump -x -d -S -m i8086 D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader/loader.elf > loader_dis.txt

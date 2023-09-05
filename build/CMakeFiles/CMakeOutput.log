@@ -15,15 +15,15 @@ The C compiler identification is GNU, found in "D:/Work/CWork/os-study/diy-x86os
 Determining if the C compiler works passed with the following output:
 Change Dir: D:/Work/CWork/os-study/diy-x86os-master/start/start/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/x86_64-elf-tools-windows/bin/make.exe -f Makefile cmTC_5f981/fast && C:/x86_64-elf-tools-windows/bin/make.exe  -f CMakeFiles/cmTC_5f981.dir/build.make CMakeFiles/cmTC_5f981.dir/build
+Run Build Command(s):C:/x86_64-elf-tools-windows/bin/make.exe -f Makefile cmTC_61e22/fast && C:/x86_64-elf-tools-windows/bin/make.exe  -f CMakeFiles/cmTC_61e22.dir/build.make CMakeFiles/cmTC_61e22.dir/build
 make[1]: Entering directory 'D:/Work/CWork/os-study/diy-x86os-master/start/start/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5f981.dir/testCCompiler.c.obj
-C:/x86_64-elf-tools-windows/bin/x86_64-elf-gcc.exe   -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables  -o CMakeFiles/cmTC_5f981.dir/testCCompiler.c.obj -c D:/Work/CWork/os-study/diy-x86os-master/start/start/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_5f981.exe
-D:/env/C/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_5f981.dir/objects.a
-C:/x86_64-elf-tools-windows/bin/x86_64-elf-ar.exe qc CMakeFiles/cmTC_5f981.dir/objects.a @CMakeFiles/cmTC_5f981.dir/objects1.rsp
-C:/x86_64-elf-tools-windows/bin/x86_64-elf-gcc.exe -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables  -Wl,--whole-archive CMakeFiles/cmTC_5f981.dir/objects.a -Wl,--no-whole-archive -o cmTC_5f981.exe -Wl,--out-implib,libcmTC_5f981.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_5f981.dir/linklibs.rsp
-x86_64-elf-gcc.exe: warning: CMakeFiles/cmTC_5f981.dir/objects.a: linker input file unused because linking not done
+Building C object CMakeFiles/cmTC_61e22.dir/testCCompiler.c.obj
+C:/x86_64-elf-tools-windows/bin/x86_64-elf-gcc.exe   -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables  -o CMakeFiles/cmTC_61e22.dir/testCCompiler.c.obj -c D:/Work/CWork/os-study/diy-x86os-master/start/start/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_61e22.exe
+D:/env/C/CMake/bin/cmake.exe -E rm -f CMakeFiles/cmTC_61e22.dir/objects.a
+C:/x86_64-elf-tools-windows/bin/x86_64-elf-ar.exe qc CMakeFiles/cmTC_61e22.dir/objects.a @CMakeFiles/cmTC_61e22.dir/objects1.rsp
+C:/x86_64-elf-tools-windows/bin/x86_64-elf-gcc.exe -g -c -O0 -m32 -fno-pie -fno-stack-protector -fno-asynchronous-unwind-tables  -Wl,--whole-archive CMakeFiles/cmTC_61e22.dir/objects.a -Wl,--no-whole-archive -o cmTC_61e22.exe -Wl,--out-implib,libcmTC_61e22.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/cmTC_61e22.dir/linklibs.rsp
+x86_64-elf-gcc.exe: warning: CMakeFiles/cmTC_61e22.dir/objects.a: linker input file unused because linking not done
 make[1]: Leaving directory 'D:/Work/CWork/os-study/diy-x86os-master/start/start/build/CMakeFiles/CMakeTmp'
 
 

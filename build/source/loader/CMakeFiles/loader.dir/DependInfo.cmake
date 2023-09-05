@@ -20,6 +20,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Work/CWork/os-study/diy-x86os-master/start/start/source/loader/loader_16.c" "source/loader/CMakeFiles/loader.dir/loader_16.c.obj" "gcc" "source/loader/CMakeFiles/loader.dir/loader_16.c.obj.d"
+  "D:/Work/CWork/os-study/diy-x86os-master/start/start/source/loader/loader_32.c" "source/loader/CMakeFiles/loader.dir/loader_32.c.obj" "gcc" "source/loader/CMakeFiles/loader.dir/loader_32.c.obj.d"
   )
 
 # Targets to which this target links.

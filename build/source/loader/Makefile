@@ -157,6 +157,30 @@ loader_16.c.s:
 	cd D:/Work/CWork/os-study/diy-x86os-master/start/start/build && $(MAKE) $(MAKESILENT) -f source/loader/CMakeFiles/loader.dir/build.make source/loader/CMakeFiles/loader.dir/loader_16.c.s
 .PHONY : loader_16.c.s
 
+loader_32.obj: loader_32.c.obj
+.PHONY : loader_32.obj
+
+# target to build an object file
+loader_32.c.obj:
+	cd D:/Work/CWork/os-study/diy-x86os-master/start/start/build && $(MAKE) $(MAKESILENT) -f source/loader/CMakeFiles/loader.dir/build.make source/loader/CMakeFiles/loader.dir/loader_32.c.obj
+.PHONY : loader_32.c.obj
+
+loader_32.i: loader_32.c.i
+.PHONY : loader_32.i
+
+# target to preprocess a source file
+loader_32.c.i:
+	cd D:/Work/CWork/os-study/diy-x86os-master/start/start/build && $(MAKE) $(MAKESILENT) -f source/loader/CMakeFiles/loader.dir/build.make source/loader/CMakeFiles/loader.dir/loader_32.c.i
+.PHONY : loader_32.c.i
+
+loader_32.s: loader_32.c.s
+.PHONY : loader_32.s
+
+# target to generate assembly for a file
+loader_32.c.s:
+	cd D:/Work/CWork/os-study/diy-x86os-master/start/start/build && $(MAKE) $(MAKESILENT) -f source/loader/CMakeFiles/loader.dir/build.make source/loader/CMakeFiles/loader.dir/loader_32.c.s
+.PHONY : loader_32.c.s
+
 start.obj: start.S.obj
 .PHONY : start.obj
 
@@ -177,6 +201,9 @@ help:
 	@echo "... loader_16.obj"
 	@echo "... loader_16.i"
 	@echo "... loader_16.s"
+	@echo "... loader_32.obj"
+	@echo "... loader_32.i"
+	@echo "... loader_32.s"
 	@echo "... start.obj"
 .PHONY : help
 

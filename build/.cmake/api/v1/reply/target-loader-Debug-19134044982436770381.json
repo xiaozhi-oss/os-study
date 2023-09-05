@@ -82,7 +82,8 @@
 			"language" : "C",
 			"sourceIndexes" : 
 			[
-				2
+				2,
+				3
 			]
 		}
 	],
@@ -133,7 +134,8 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				2
+				2,
+				3
 			]
 		}
 	],
@@ -154,6 +156,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 1,
 			"path" : "source/loader/loader_16.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "source/loader/loader_32.c",
 			"sourceGroupIndex" : 2
 		}
 	],
