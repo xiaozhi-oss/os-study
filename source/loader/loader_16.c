@@ -79,7 +79,7 @@ static void enter_protect_mode (void) {
     uint32_t cr0 = read_cr0();
     write_cr0(cr0 | (1 << 0));
 
-    far_jump(8, (uint32_t) protect_mode_entry);
+    far_jump(8, (uint32_t)protect_mode_entry);
 }
 
 void loader_entry (void) {
