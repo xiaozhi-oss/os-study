@@ -6,6 +6,9 @@
 
 #include "comm/boot_info.h"
 #include "comm/types.h"
+#include "comm/cpu_instr.h"
+
+void protect_mode_entry (void);
 
 // 内存检测信息结构
 typedef struct SMAP_entry {
@@ -21,4 +24,5 @@ typedef struct SMAP_entry {
         用于告诉编译器不要在结构体的成员之间插入任何填充字节，
         以确保结构体在内存中是以紧凑的形式存储的。
 */
+
 #endif
