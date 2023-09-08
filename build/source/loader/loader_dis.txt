@@ -7,38 +7,38 @@ start address 0x00008000
 
 Program Header:
     LOAD off    0x00001000 vaddr 0x00008000 paddr 0x00008000 align 2**12
-         filesz 0x00000515 memsz 0x00000515 flags r-x
-    LOAD off    0x00001518 vaddr 0x00009518 paddr 0x00009518 align 2**12
-         filesz 0x00000018 memsz 0x0000007c flags rw-
+         filesz 0x00000520 memsz 0x00000520 flags r-x
+    LOAD off    0x00001520 vaddr 0x00009520 paddr 0x00009520 align 2**12
+         filesz 0x00000018 memsz 0x00000074 flags rw-
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000004df  00008000  00008000  00001000  2**0
+  0 .text         000004ea  00008000  00008000  00001000  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .rodata       00000036  000084df  000084df  000014df  2**0
+  1 .rodata       00000036  000084ea  000084ea  000014ea  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  2 .data         00000018  00009518  00009518  00001518  2**2
+  2 .data         00000018  00009520  00009520  00001520  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  3 .bss          00000054  00009540  00009540  00001530  2**5
+  3 .bss          00000054  00009540  00009540  00001538  2**5
                   ALLOC
-  4 .comment      00000011  00000000  00000000  00001530  2**0
+  4 .comment      00000011  00000000  00000000  00001538  2**0
                   CONTENTS, READONLY
-  5 .debug_aranges 00000060  00000000  00000000  00001548  2**3
+  5 .debug_aranges 00000060  00000000  00000000  00001550  2**3
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00000630  00000000  00000000  000015a8  2**0
+  6 .debug_info   00000630  00000000  00000000  000015b0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 0000027d  00000000  00000000  00001bd8  2**0
+  7 .debug_abbrev 0000027d  00000000  00000000  00001be0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   0000030c  00000000  00000000  00001e55  2**0
+  8 .debug_line   0000030b  00000000  00000000  00001e5d  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000230  00000000  00000000  00002164  2**2
+  9 .debug_frame  00000238  00000000  00000000  00002168  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000031f  00000000  00000000  00002394  2**0
+ 10 .debug_str    0000031f  00000000  00000000  000023a0  2**0
                   CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00008000 l    d  .text	00000000 .text
-000084df l    d  .rodata	00000000 .rodata
-00009518 l    d  .data	00000000 .data
+000084ea l    d  .rodata	00000000 .rodata
+00009520 l    d  .data	00000000 .data
 00009540 l    d  .bss	00000000 .bss
 00000000 l    d  .comment	00000000 .comment
 00000000 l    d  .debug_aranges	00000000 .debug_aranges
@@ -65,12 +65,12 @@ SYMBOL TABLE:
 00008378 l     F .text	0000001f outb
 00008397 l     F .text	0000012f read_disk
 00008316 g     F .text	00000026 loader_entry
-00009518 g     O .data	00000018 gdt_table
-000084c6 g     F .text	00000019 load_kernel
+00009520 g     O .data	00000018 gdt_table
+000084c6 g     F .text	00000024 load_kernel
 00008000 g       .text	00000000 _start
-00009530 g       .bss	00000000 __bss_start
+00009538 g       .bss	00000000 __bss_start
 00008003 g       .text	00000000 protect_mode_entry
-00009530 g       .data	00000000 _edata
+00009538 g       .data	00000000 _edata
 00009594 g       .bss	00000000 _end
 
 
@@ -137,8 +137,8 @@ static inline uint8_t inb (uint16_t port) {
     8040:	66 c3                	retl   
 
 00008042 <outb>:
-/**
  * 二进制的方式将数据传给指定的 I/O端口
+ * IO端口是计算机与外部设备的接口，通过IO端口来控制外部设备，IO端口出厂自带，或者说是厂商之间有协定端口的功能
  *  @port 端口
  *  @data 数据
  */
@@ -331,7 +331,7 @@ static void detect_memory (void) {
     uint32_t signature, bytes;
     SMAP_entry_t smap_entry;
     show_msg("try to detect memory:");
-    8162:	66 68 df 84 00 00    	pushl  $0x84df
+    8162:	66 68 ea 84 00 00    	pushl  $0x84ea
     8168:	66 e8 a1 ff ff ff    	calll  810f <show_msg>
     816e:	66 83 c4 04          	add    $0x4,%esp
     boot_info.ram_region_count = 0;
@@ -364,7 +364,7 @@ static void detect_memory (void) {
     81cb:	4d 53 
     81cd:	74 13                	je     81e2 <detect_memory+0x98>
             show_msg("failed\r\n");
-    81cf:	66 68 f5 84 00 00    	pushl  $0x84f5
+    81cf:	66 68 00 85 00 00    	pushl  $0x8500
     81d5:	66 e8 34 ff ff ff    	calll  810f <show_msg>
     81db:	66 83 c4 04          	add    $0x4,%esp
             return;
@@ -406,7 +406,7 @@ static void detect_memory (void) {
     8246:	67 66 83 7d f0 00    	cmpl   $0x0,-0x10(%ebp)
     824c:	75 13                	jne    8261 <detect_memory+0x117>
             show_msg("ok\r\n");
-    824e:	66 68 fe 84 00 00    	pushl  $0x84fe
+    824e:	66 68 09 85 00 00    	pushl  $0x8509
     8254:	66 e8 b5 fe ff ff    	calll  810f <show_msg>
     825a:	66 83 c4 04          	add    $0x4,%esp
             break;
@@ -455,7 +455,7 @@ static void enter_protect_mode (void) {
     82bf:	66 83 c4 08          	add    $0x8,%esp
 
     lgdt((uint32_t) gdt_table, sizeof(gdt_table));
-    82c3:	66 b8 18 95 00 00    	mov    $0x9518,%eax
+    82c3:	66 b8 20 95 00 00    	mov    $0x9520,%eax
     82c9:	66 6a 18             	pushl  $0x18
     82cc:	66 50                	push   %eax
     82ce:	66 e8 a6 fd ff ff    	calll  807a <lgdt>
@@ -489,7 +489,7 @@ void loader_entry (void) {
     8316:	66 55                	push   %ebp
     8318:	66 89 e5             	mov    %esp,%ebp
     show_msg("....loading....\n\r");
-    831b:	66 68 03 85 00 00    	pushl  $0x8503
+    831b:	66 68 0e 85 00 00    	pushl  $0x850e
     8321:	66 e8 e8 fd ff ff    	calll  810f <show_msg>
     8327:	66 83 c4 04          	add    $0x4,%esp
     detect_memory();
@@ -566,6 +566,10 @@ static void read_disk(uint32_t sector, uint32_t sector_count, uint8_t *buf) {
     8398:	89 e5                	mov    %sp,%bp
     839a:	53                   	push   %bx
     839b:	83 ec 10             	sub    $0x10,%sp
+	/*
+		x86架构使用 0x1F6端口 来选择磁盘类型
+		0xE0 表示使用 LBA（Logical Block Addressing）模式
+	 */
     outb(0x1F6, (uint8_t) (0xE0));
     839e:	68 e0 00             	push   $0xe0
     83a1:	00 00                	add    %al,(%bx,%si)
@@ -575,6 +579,10 @@ static void read_disk(uint32_t sector, uint32_t sector_count, uint8_t *buf) {
     83ab:	ff                   	(bad)  
     83ac:	ff 83 c4 08          	incw   0x8c4(%bp,%di)
 
+	/*
+		磁盘控制器只能接收8位的值，需要将填写的值设置位8位的
+			1.sector_count >> 8 
+	 */
 	outb(0x1F2, (uint8_t) (sector_count >> 8));
     83b0:	8b 45 0c             	mov    0xc(%di),%ax
     83b3:	c1 e8 08             	shr    $0x8,%ax
@@ -657,13 +665,17 @@ static void read_disk(uint32_t sector, uint32_t sector_count, uint8_t *buf) {
     845c:	ff                   	(bad)  
     845d:	ff 83 c4 08          	incw   0x8c4(%bp,%di)
 
-	// 读取数据
+	// 转换成16位的，因为 inb 每次读取两个字节
 	uint16_t *data_buf = (uint16_t*) buf;
     8461:	8b 45 10             	mov    0x10(%di),%ax
     8464:	89 45 f8             	mov    %ax,-0x8(%di)
+	// 读取指定扇区数的数据到缓冲区中
 	while (sector_count-- > 0) {
     8467:	eb 4a                	jmp    84b3 <read_disk+0x11c>
-		// 每次扇区读之前都要检查，等待数据就绪
+		/*
+		 	每次扇区读之前都要检查，等待数据就绪
+			inb(0x1F7) 读取磁盘的状态位，& 0x88 != 0x8 就是还未准备好
+		 */
 		while ((inb(0x1F7) & 0x88) != 0x8) {}
     8469:	90                   	nop
     846a:	68 f7 01             	push   $0x1f7
@@ -677,7 +689,10 @@ static void read_disk(uint32_t sector, uint32_t sector_count, uint8_t *buf) {
     847f:	83 f8 08             	cmp    $0x8,%ax
     8482:	75 e6                	jne    846a <read_disk+0xd3>
 
-		// 读取并将数据写入到缓存中
+		/*
+		 	读取并将数据写入到缓存中
+			循环 inw(0x1F0) 每次读取两个字节数据放入到缓冲区中，所以循环要除以2。一块扇区512字节
+		 */
 		for (int i = 0; i < SECTOR_SIZE / 2; i++) {
     8484:	c7 45 f4 00 00       	movw   $0x0,-0xc(%di)
     8489:	00 00                	add    %al,(%bx,%si)
@@ -717,15 +732,23 @@ static void read_disk(uint32_t sector, uint32_t sector_count, uint8_t *buf) {
 void load_kernel (void) {
     84c6:	55                   	push   %bp
     84c7:	89 e5                	mov    %sp,%bp
+    84c9:	83 ec 08             	sub    $0x8,%sp
     // 读取的扇区数尽可能大一些，kernel.elf文件可能会很大
     read_disk(100, 500, (uint8_t *) SYS_KERNEL_LOAD_ADDR);
-    84c9:	68 00 00             	push   $0x0
-    84cc:	10 00                	adc    %al,(%bx,%si)
-    84ce:	68 f4 01             	push   $0x1f4
-    84d1:	00 00                	add    %al,(%bx,%si)
-    84d3:	6a 64                	push   $0x64
-    84d5:	e8 bd fe             	call   8395 <outb+0x1d>
-    84d8:	ff                   	(bad)  
-    84d9:	ff 83 c4 0c          	incw   0xcc4(%bp,%di)
-    for (;;) {}
-    84dd:	eb fe                	jmp    84dd <load_kernel+0x17>
+    84cc:	68 00 00             	push   $0x0
+    84cf:	10 00                	adc    %al,(%bx,%si)
+    84d1:	68 f4 01             	push   $0x1f4
+    84d4:	00 00                	add    %al,(%bx,%si)
+    84d6:	6a 64                	push   $0x64
+    84d8:	e8 ba fe             	call   8395 <outb+0x1d>
+    84db:	ff                   	(bad)  
+    84dc:	ff 83 c4 0c          	incw   0xcc4(%bp,%di)
+    // 跳转到内核中
+	((void (*)(void)) SYS_KERNEL_LOAD_ADDR)();
+    84e0:	b8 00 00             	mov    $0x0,%ax
+    84e3:	10 00                	adc    %al,(%bx,%si)
+    84e5:	ff d0                	call   *%ax
+}
+    84e7:	90                   	nop
+    84e8:	c9                   	leave  
+    84e9:	c3                   	ret    

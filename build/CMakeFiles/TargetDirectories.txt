@@ -6,3 +6,6 @@ D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/boot/CMakeFiles
 D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader/CMakeFiles/loader.dir
 D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader/CMakeFiles/edit_cache.dir
 D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader/CMakeFiles/rebuild_cache.dir
+D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/kernel/CMakeFiles/kernel.dir
+D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/kernel/CMakeFiles/edit_cache.dir
+D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/kernel/CMakeFiles/rebuild_cache.dir

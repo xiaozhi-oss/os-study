@@ -15,16 +15,21 @@ static inline uint8_t inb (uint16_t port) {
     return rv;
 }
 
+/**
+ * inb 和 in 指令的功能一样都是从 I/O端口 中读取数据
+ * "in"指令使用DX寄存器来指定I/O端口地址，而"inb"指令使用立即数来指定端口地址。
+ */ 
 static inline uint16_t inw (uint16_t port) {
     uint16_t rv;
 
-    // inb al, dx
+    // in al, dx
     __asm__ __volatile__ ("in %1, %0" : "=a"(rv) : "dN"(port));
     return rv;
 }
 
 /**
  * 二进制的方式将数据传给指定的 I/O端口
+ * IO端口是计算机与外部设备的接口，通过IO端口来控制外部设备，IO端口出厂自带，或者说是厂商之间有协定端口的功能
  *  @port 端口
  *  @data 数据
  */

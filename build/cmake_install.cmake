@@ -41,6 +41,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/boot/cmake_install.cmake")
   include("D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/loader/cmake_install.cmake")
+  include("D:/Work/CWork/os-study/diy-x86os-master/start/start/build/source/kernel/cmake_install.cmake")
 
 endif()
 
